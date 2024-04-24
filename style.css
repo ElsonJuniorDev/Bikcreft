@@ -12,6 +12,7 @@
 body {
   background-color: var(--cinza);
   font-family: Arial;
+  background: #a9a9a9;
 }
 
 .containerPrincipal {
