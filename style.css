@@ -1,5 +1,6 @@
 :root {
   --vermelho: #ee2211;
+  --verbelhoEscuro: #a40b54;
   --cinza: #f7f7f7;
   --cinzaEscuro: #c6c6c6;
 }
@@ -12,32 +13,46 @@
 body {
   background-color: var(--cinza);
   font-family: Arial;
-  background: #a9a9a9;
 }
 
 .containerPrincipal {
-  margin-top: 60px;
+  margin-top: 3.75rem;
   display: grid;
-  gap: 60px;
+  gap: 3.75rem;
   justify-items: center;
+}
+
+.cabecalho {
+  display: grid;
+  justify-items: center;
+  gap: 3.75em;
 }
 
 .menu {
   display: flex;
-  gap: 20px;
+  gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 10px;
 }
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
   background-color: #fff;
   padding: 15px 30px;
-  border: 4px;
+  border-radius: 4px;
   color: #000;
+  border: solid 2px var(--cinza);
+}
+.menu a:hover {
+  border-color: var(--vermelho);
 }
 
 p {
-  font-size: 20px;
+  font-size: 1rem;
   line-height: 1.3;
 }
 
@@ -47,25 +62,34 @@ p {
   grid-template-columns: 1fr 1fr;
 }
 
+
+
 .descricao {
   display: grid;
   position: relative;
   background: #fff;
-  padding: 40px;
+  padding: 2rem;
   text-align: right;
   align-items: center;
   justify-items: end;
 }
-.detalhe {
+
+.descricao::before{
+  content: "";
   top: 30px;
   right: -30px;
-  width: 60px;
+  width: 3.75rem;
   height: 4px;
   background: var(--vermelho);
   position: absolute;
 }
 
-.descricao a {
+.descricao h1{
+  font-size: 1.75rem;
+}
+
+
+.btnVerMais {
   text-decoration: none;
   color: #fff;
   border-radius: 4px;
@@ -75,28 +99,45 @@ p {
   display: inline-block;
 }
 
+.btnVerMais:hover {
+  background-color: var(--verbelhoEscuro);
+}
+
 .foto-bick {
   max-width: 100%;
   display: block;
 }
 
 .subTitulo {
-  font-size: 64px;
+  text-transform: uppercase;
+  font-size: 4rem;
   text-align: right;
-  padding: 40px;
+  align-self: center;
+  padding: 2.5rem;
   color: var(--cinzaEscuro);
+  background-image: url(./img/onda.svg);
 }
 .vantagens {
   background: #fff;
-  padding: 40px;
+  padding: 2.5rem;
 }
 
 .vantagens-item {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 10px 20px;
-  padding: 20px;
+  padding: 1.25rem;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease-in-out;
 }
+.vantagens-item:hover {
+  border-left: solid 4px var(--vermelho);
+}
+
+.vantagens-item:nth-child(odd) {
+  background-color: var(--cinza);
+}
+
 .vantagens-item p {
   grid-column: 2;
 }
@@ -105,6 +146,6 @@ footer {
   background-color: #fff;
   width: 100%;
   text-align: center;
-  padding: 40px;
+  padding: 2.5rem;
   box-sizing: border-box;
 }
