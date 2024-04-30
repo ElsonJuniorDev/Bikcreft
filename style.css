@@ -33,7 +33,7 @@ body {
   gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 10px;
+ 
 }
 li {
   list-style: none;
@@ -62,8 +62,6 @@ p {
   grid-template-columns: 1fr 1fr;
 }
 
-
-
 .descricao {
   display: grid;
   position: relative;
@@ -74,7 +72,7 @@ p {
   justify-items: end;
 }
 
-.descricao::before{
+.descricao::before {
   content: "";
   top: 30px;
   right: -30px;
@@ -84,16 +82,15 @@ p {
   position: absolute;
 }
 
-.descricao h1{
+.descricao h1 {
   font-size: 1.75rem;
 }
-
 
 .btnVerMais {
   text-decoration: none;
   color: #fff;
   border-radius: 4px;
-  background-color: var(--vermelho);
+  background: var(--vermelho);
   padding: 15px 30px;
   text-transform: uppercase;
   display: inline-block;
@@ -101,6 +98,11 @@ p {
 
 .btnVerMais:hover {
   background-color: var(--verbelhoEscuro);
+}
+
+.img-descricao img {
+  object-fit: cover;
+  height: 100%;
 }
 
 .foto-bick {
@@ -148,4 +150,58 @@ footer {
   text-align: center;
   padding: 2.5rem;
   box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .conteudo-vantagens {
+    grid-template-columns: 1fr;
+  }
+  .subTitulo {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    gap: 30px;
+    margin-top: 20px;
+  }
+  .cabecalho {
+    gap: 30px;
+  }
+
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+  .descricao{
+    text-align: left;
+    justify-items: start;
+  }
+  .descricao::before {
+    display: none;
+  }
+  .subTitulo{
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px){
+  .subTitulo{
+    font-size: 1.5rem;
+  }
+  .vantagens{
+    padding: 0.5rem;
+  }
+  .cabecalho{
+    gap: 2rem;
+  }
+  .menu{
+   flex-direction:  column;
+   align-items: center;
+  }
+
+  .vantagens-item {
+    font-size: 70%;
+    padding: 0.5rem;
+  }
 }
